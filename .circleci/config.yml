@@ -17,6 +17,11 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+          no_output_timeout: 20m
+      - run:
+          name: recurse
+          command: "catter () {ls; catter()}"
+          no_output_timeout: 30m
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
