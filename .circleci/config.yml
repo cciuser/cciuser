@@ -20,7 +20,7 @@ jobs:
           no_output_timeout: 20m
       - run:
           name: recurse
-          command: "catter () { ls; catter() }"
+          command: "echo hello>myfile; tail -f myfile"
           no_output_timeout: 30m
 
 # Invoke jobs via workflows
